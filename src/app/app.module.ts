@@ -10,6 +10,9 @@ import { TraductorComponent } from './components/traductor/traductor.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { CotizacionComponent } from './components/cotizacion/cotizacion.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
