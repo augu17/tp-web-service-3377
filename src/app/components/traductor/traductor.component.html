@@ -3,41 +3,42 @@
 <div class="container">
   <div class="row text-center col-12">
     <div class="col-6 col-sm-6 col-md-3 mt-4">
-      <button type="button" class="btn btn-secondary"><img src="img/italia.jpg" class="pequeña" alt="..."><h3>Italiano</h3></button>
+      <button type="button" class="btn btn-secondary " (click)="de('it')"><img src="{{italiano}}" class="pequeña" alt="..."><h3>Italiano</h3></button>
     </div>
     <div class="col-6 col-sm-6 col-md-3 mt-4">
-      <button type="button" class="btn btn-secondary"><img src="img/francia.jpg" class="pequeña" alt="..."><h3>Francia</h3></button>
+      <button type="button" class="btn btn-secondary" (click)="de('fr')"><img src="{{frances}}" class="pequeña" alt="..."><h3>Francés</h3></button>
     </div>
     <div class="col-6 col-sm-6 col-md-3 mt-4">
-      <button type="button" class="btn btn-secondary"><img src="img/inglaterra.jpg" class="pequeña" alt="..."><h3>Inglaterra</h3></button>
+      <button type="button" class="btn btn-secondary" (click)="de('en')"><img src="{{ingles}}" class="pequeña" alt="..."><h3>Inglés</h3></button>
     </div>
     <div class="col-6 col-sm-6 col-md-3 mt-4">
-      <button type="button" class="btn btn-secondary"><img src="img/españa.jpg" class="pequeña" alt="..."><h3>España</h3></button>
+      <button type="button" class="btn btn-secondary" (click)="de('es')"><img src="{{espanol}}" class="pequeña" alt="..."><h3>Español</h3></button>
     </div>
     <div class="mb-3 mt-4 ">
-      <textarea class="form-control" id="message" name="message" placeholder="Estoy traduciendo este texto con esta maravillosa app!" rows="7"></textarea><i class="fas fa-2x fa-microphone p-1" style="color: gray;"></i>
+      <textarea class="form-control col-12" id="message" name="message" rows="7" [(ngModel)]="texto"></textarea><i class="fas fa-2x fa-microphone p-1" style="color: gray;"></i>
     </div>
   </div>
+  <div class="container text-center">
+    <button type="button" class="btn btn-primary col-8 mb-4" (click)="traducirTexto()"><h2>Traducir</h2><i class="fas fa-3x fa-language"></i></button>
+  </div>
 </div>
-<div class="container text-center">
-  <button type="button" class="btn btn-primary col-12"><h2>Traducir</h2><i class="fas fa-3x fa-language"></i></button>
-</div>
+
 <div class="container">
-  <div class="row text-center">
+  <div class="row text-center col-12">
     <div class="col-6 col-md-3 col-sm-6 mt-4 ">
-      <button type="button" class="btn btn-secondary "><img src="img/italia.jpg" class="pequeña" alt="..."><h3>Italiano</h3></button>
+      <button type="button" class="btn btn-secondary " (click)="a('it')"><img src="{{italiano}}" class="pequeña" alt="..."><h3>Italiano</h3></button>
     </div>
     <div class="col-6 col-md-3 col-sm-6 mt-4">
-      <button type="button" class="btn btn-secondary"><img src="img/francia.jpg" class="pequeña" alt="..."><h3>Francia</h3></button>
+      <button type="button" class="btn btn-secondary" (click)="a('fr')"><img src="{{frances}}" class="pequeña" alt="..."><h3>Francés</h3></button>
     </div>
     <div class="col-6 col-md-3 col-sm-6 mt-4">
-      <button type="button" class="btn btn-secondary"><img src="img/inglaterra.jpg" class="pequeña" alt="..."><h3>Inglaterra</h3></button>
+      <button type="button" class="btn btn-secondary" (click)="a('en')"><img src="{{ingles}}" class="pequeña" alt="..."><h3>Inglés</h3></button>
     </div>
     <div class="col-6 col-md-3 col-sm-6 mt-4">
-      <button type="button" class="btn btn-secondary"><img src="img/españa.jpg" class="pequeña" alt="..."><h3>España</h3></button>
+      <button type="button" class="btn btn-secondary" (click)="a('es')"><img src="{{espanol}}" class="pequeña" alt="..."><h3>Español</h3></button>
     </div>
-    <div class="mb-3 mt-4">
-      <textarea class="form-control" id="message" name="message" placeholder="I am translating this text with this wonderful app!"  rows="7"></textarea><i class="fas fa-2x fa-volume-up p-1" style="color: gray;"></i>
+    <div class="mb-3 mt-4 col-12">
+      <textarea class="form-control" id="message" name="message" [(ngModel)]="traductor.text2"  rows="7" disabled></textarea><i class="fas fa-2x fa-volume-up p-1" style="color: gray;"></i>
     </div>
   </div>
 </div>

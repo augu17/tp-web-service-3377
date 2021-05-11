@@ -12,7 +12,7 @@ export class PeliculasComponent implements OnInit {
   pelicula: Pelicula;
   peliculas: Array<Pelicula>;
   nomPelicula: string = "";
-  popup:string="https://imgur.com/illXjCi";
+  popup:string="https://i.imgur.com/illXjCi.jpeg";
 
   constructor(private PeliculaService: PeliculaService) {
     this.pelicula = new Pelicula;
@@ -34,5 +34,4 @@ export class PeliculasComponent implements OnInit {
       }
     )
   }
-
 }

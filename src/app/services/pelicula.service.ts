@@ -14,11 +14,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-
-
 export class PeliculaService {
 
-  
   constructor(private _http:HttpClient) {  }
   
   public listPeliculas(cadena:string):Observable<any>{
