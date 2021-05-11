@@ -12,6 +12,8 @@ import { CotizacionComponent } from './components/cotizacion/cotizacion.componen
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxDataTableModule} from "angular-9-datatable";
+
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxDataTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

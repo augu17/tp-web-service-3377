@@ -3,74 +3,62 @@
   <div class="row align-items-start">
     <div class="col-12 ">
       <form>
-          <div class="mb-3 bg-light">
-              <h4 class="bg-light text-start m-3">Estadísticas COVID</h4>
+        <div class="mb-3 bg-light">
+          <h4 class="bg-light text-start m-3">Estadísticas COVID</h4>
 
-              <select class="form-select">
-                  <option selected>Seleccione país</option>
-                  <option value="1">Italia</option>
-                  <option value="2">Francia</option>
-                  <option value="3">España</option>
-              </select>
-              <div class="form-check ">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Casos Confirmados
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Casos Curados
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Casos Fallecidos
-                </label>
-              </div>
-              <button type="button" class="btn btn-secondary col-2">Convertir </button>
+          <select class="form-select" name="texto" id="texto" [(ngModel)]="texto">
+            <option selected value="Todos">Todos</option>
+            <option value="world">Mundo</option>
+            <option value="usa">Estados Unidos</option>
+            <option value="india">India</option>
+            <option value="brasil">Brasil</option>
+            <option value="francia">Francia</option>
+          </select>
+          <div class="form-check ">
+            <input class="form-check-input" type="checkbox" name="casos" [(ngModel)]="casos" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Casos Confirmados
+            </label>
           </div>
-          
-        </form>
-      
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="curados" [(ngModel)]="curados" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Casos Curados
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="fallecidos" [(ngModel)]="fallecidos"
+              id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Casos Fallecidos
+            </label>
+          </div>
+          <button type="button" class="btn btn-secondary col-2" (click)="arbitro()">Buscar</button>
+        </div>
+
+      </form>
+
     </div>
 
     <div class="col-12 ">
-      <table class="table text-end bg-light ">
-          <thead>
-            <tr>
-              <th scope="col" class="text-start">Ubicación</th>
-              <th scope="col">Casos Confirmados</th>
-              <th scope="col">Casos por M de habitantes</th>
-              <th scope="col">Curados</th>
-              <th scope="col">Fallecidos</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" class="text-start"><img src="img/italia.jpg" class="maspequeña" alt="..."></th>
-              <td>3,740,000</td>
-              <td>61,957.87</td>
-              <td>3,090,000</td>
-              <td>114,000</td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-start"><img src="img/francia.jpg" class="maspequeña" alt="..."></th>
-              <td>4,940,000</td>
-              <td>73,691.97</td>
-              <td>2,500,000</td>
-              <td>98,065</td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-start"><img src="img/españa.jpg" class="maspequeña" alt="..."></th>
-              <td>3,350,000</td>
-              <td>71,275.83</td>
-              <td>1,700,000</td>
-              <td>76,328</td>
-            </tr>
-          </tbody>
-        </table>
+
+      <table class="table text-end bg-light">
+        <thead>
+          <tr>
+            <th scope="col" class="text-start">Ubicación</th>
+            <th scope="col" *ngIf="casos">Casos Confirmados</th>
+            <th scope="col" *ngIf="curados">Curados</th>
+            <th scope="col" *ngIf="fallecidos">Fallecidos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of vector_Estadisticas">
+            <th scope="row" class="text-start"><img src="{{item.imagen}}" class="maspequeña" alt="..."> {{item.nombre}}</th>
+            <td *ngIf="casos">{{item.casos}}</td>
+            <td *ngIf="curados">{{item.curados}}</td>
+            <td *ngIf="fallecidos">{{item.fallecidos}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
